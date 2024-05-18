@@ -4,21 +4,27 @@ import { CategoryScale } from 'chart.js/auto';
 import { Chart } from 'chart.js/auto';
 
 Chart.register(CategoryScale);
+let a = 60;
 
-const LineChart = () => {
+interface GraphProps {
+  style?: React.CSSProperties;
+}
+
+const LineChart: React.FC<GraphProps> = ({ style }) => {
   const data = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
       {
         label: 'Sales Data',
-        data: [65, 59, 80, 81, 56, 55, 40],
+        data: ,
         fill: false,
-        borderColor: 'rgba(75, 192, 192, 1)',
+        borderColor: 'rgba(128, 0, 128, 1)', // Change border color to purple
+        backgroundColor: 'rgba(169, 169, 169, 0.2)',
       },
     ],
   };
 
-  return <Line data={data} />;
+  return <Line data={data} style={style} />;
 };
 
 export default LineChart;
